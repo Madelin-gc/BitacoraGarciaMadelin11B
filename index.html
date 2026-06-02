@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora Tecnología Garcia</title>
+    <link rel="icon" type="image/png" href="recursos/img/LG1.png">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            padding: 50px;
+            background-color: rgb(206, 179, 231);
+        }
+
+        /* EFECTO NEÓN RESTAURADO */
+        h1 {
+            color: #ffffff; 
+            font-size: 2.8rem;
+            margin: 0;
+            text-shadow: 
+                0 0 5px #fff, 
+                0 0 10px #fff, 
+                0 0 15px #9b59b6, 
+                0 0 25px #9b59b6, 
+                0 0 35px #8e44ad; 
+            transition: 0.3s;
+            cursor: default;
+        }
+
+        h1:hover {
+            text-shadow: 
+                0 0 7px #fff, 
+                0 0 15px #fff, 
+                0 0 25px #a29bfe, 
+                0 0 45px #a29bfe; 
+        }
+
+        main {
+            flex: 1;
+            padding: 40px; /* Esto crea el borde a los costados del contenido */
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .contenedor-semanas {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .semana {
+            background: linear-gradient(145deg, #ffffff, #f3e5f5); 
+            border-radius: 20px;
+            width: 45%; /* Tamaño equilibrado para que no sean gigantes */
+            min-width: 400px;
+            padding: 25px;
+            box-shadow: 8px 8px 16px #d1d1d1; 
+            border-top: 5px solid #9b59b6; 
+            display: flex; 
+            flex-direction: column;
+            text-align: left;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-sizing: border-box;
+        }
+
+        .semana:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(155, 89, 182, 0.2);
+        }
+
+        .semana h3 {
+            color: #6c5ce7; 
+            margin: 0 0 10px 0;
+            font-size: 1.6rem;
+        }
+
+        .semana p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .pdf-incrustado {
+            width: 100%;
+            height: 350px; 
+            border-radius: 10px;
+            border: 1px solid #9b59b6;
+        }
+
+        .video-semana {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: rgb(199, 187, 244);
+            border-top: 1px solid #000;
+        }
+
+        /* EFECTO BRINCO DEL LOGO RESTAURADO */
+        footer img {
+            width: 300px; 
+            transition: transform 0.3s ease; 
+            cursor: pointer;
+        }
+
+        footer img:hover {
+            transform: scale(1.15); /* El "brinco" o zoom */
+        }
+
+        @media(max-width: 900px) {
+            .semana { width: 100%; min-width: unset; }
+            footer { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bitácora de Tecnología</h1>
+    </header>
+
+    <main>
+        <h2>Mis progresos semanales</h2>
+        
+        <div class="contenedor-semanas">
+            <article class="semana">
+                <h3>Introducción a Arduino</h3>
+                <p>En esta clase, exploré los fundamentos de la placa y sus componentes esenciales. Elaboré un documento PDF detallado donde identifico cada parte del hardware.</p>
+                <embed src="recursos/Introducción Arduino (2) MD11B22.pdf" type="application/pdf" class="pdf-incrustado" />
+            </article>
+
+            <article class="semana">
+                <h3>Semana 2: Desarrollo Web</h3>
+                <p>Continuamos con el aprendizaje de HTML y CSS, dándole estilo a nuestra bitácora personal y añadiendo elementos multimedia interactivos.</p>
+                <video class="video-semana" controls>
+                    <source src="Grabación 2026-05-12 114851.mp4" type="video/mp4">
+                </video>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <span>2026 @madi_grc</span>
+        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" alt="Logo Colegio">
+    </footer>
+
+</body>
+</html>
